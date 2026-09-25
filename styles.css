@@ -18,7 +18,7 @@ body {
 }
 
 /* Etch a Sketch Styles */
-.container {
+.toy-container {
   background-color: #e60000;
   max-width: 65%;
   margin: auto;
@@ -26,7 +26,7 @@ body {
   padding: 10px;
 }
 
-.container span {
+.toy-container span {
   display: block;
   padding: 30px 10px 20px;
   font-size: 30px;
@@ -37,14 +37,21 @@ body {
 }
 
 .grid-container {
-  border: 2px solid transparent;
+  /* border: 2px solid transparent; */
   width: 550px;
   height: 550px;
   max-width: 100%;
   margin: auto;
   background-color: #d3d3d3;
-  border-radius: 10px;
   margin-bottom: 20px;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid-container div {
+  border: 2px solid black;
+  aspect-ratio: 1 / 1; /* calculates height automatically */
 }
 
 .row-container {
