@@ -26,6 +26,22 @@ body {
   border-radius: 10px;
 }
 
+.menu .rgb-marker {
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.8),
+    0 0 1px rgba(0, 0, 0, 1);
+}
+
 /* Etch a Sketch Styles */
 .toy-container {
   background-color: #e60000;
@@ -59,7 +75,7 @@ body {
 }
 
 .grid-container div {
-  border: 2px solid black;
+  /* border: 2px solid black; */
   aspect-ratio: 1 / 1; /* calculates height automatically */
 }
 
@@ -78,7 +94,9 @@ body {
 }
 
 .row-container .clear,
-.menu .grid-size {
+.menu .grid-size,
+.menu .rgb-marker,
+.menu .black-marker {
   border: 2px solid transparent;
   cursor: pointer;
   background-color: rgb(109, 18, 17);
@@ -88,4 +106,8 @@ body {
   border-radius: 10px;
   text-transform: capitalize;
   font-weight: 600;
+}
+
+.menu .black-marker {
+  background-color: black;
 }

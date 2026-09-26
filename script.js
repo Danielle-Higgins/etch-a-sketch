@@ -1,7 +1,16 @@
 const gridContainer = document.querySelector(".grid-container");
 const gridSizeBtn = document.querySelector(".grid-size");
 const clearBtn = document.querySelector(".clear");
+const rgbBtn = document.querySelector(".rgb-marker");
+const blackBtn = document.querySelector(".black-marker");
+
 let heldDown = false;
+let rgbMarker = false;
+let blackMarker = false;
+
+function getRandomRgb() {
+  return Math.floor(Math.random() * 255) + 1;
+}
 
 function getSqaures(size) {
   const numOfSqaures = size * size;
@@ -17,7 +26,13 @@ getSqaures(16);
 // drag mouse over the grid instead
 gridContainer.addEventListener("mousedown", (e) => {
   if (e.target.matches(".grid-container div")) {
-    e.target.style.backgroundColor = "black";
+    if (rgbMarker) {
+      e.target.style.backgroundColor = `rgb(${getRandomRgb()}, ${getRandomRgb()}, ${getRandomRgb()})`;
+    } else if (blackMarker) {
+      e.target.style.backgroundColor = "black";
+    } else {
+      e.target.style.backgroundColor = "black";
+    }
     heldDown = true;
   }
 
@@ -28,7 +43,13 @@ gridContainer.addEventListener("mousedown", (e) => {
 
     sqaure.addEventListener("mouseenter", (e) => {
       if (heldDown) {
-        e.target.style.backgroundColor = "black";
+        if (rgbMarker) {
+          e.target.style.backgroundColor = `rgb(${getRandomRgb()}, ${getRandomRgb()}, ${getRandomRgb()})`;
+        } else if (blackMarker) {
+          e.target.style.backgroundColor = "black";
+        } else {
+          e.target.style.backgroundColor = "black";
+        }
       }
     });
   });
@@ -48,4 +69,14 @@ clearBtn.addEventListener("click", () => {
   gridContainer.childNodes.forEach((div) => {
     div.style.backgroundColor = "";
   });
+});
+
+rgbBtn.addEventListener("click", () => {
+  rgbMarker = true;
+  blackMarker = false;
+});
+
+blackBtn.addEventListener("click", () => {
+  blackMarker = true;
+  rgbMarker = false;
 });
