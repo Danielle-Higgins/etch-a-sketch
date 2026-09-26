@@ -1,5 +1,6 @@
 const gridContainer = document.querySelector(".grid-container");
 const gridSizeBtn = document.querySelector(".grid-size");
+const clearBtn = document.querySelector(".clear");
 let heldDown = false;
 
 function getSqaures(size) {
@@ -41,4 +42,10 @@ gridSizeBtn.addEventListener("click", () => {
   document.querySelector(".grid-container").replaceChildren();
 
   getSqaures(userSize);
+});
+
+clearBtn.addEventListener("click", () => {
+  gridContainer.childNodes.forEach((div) => {
+    div.style.backgroundColor = "";
+  });
 });
