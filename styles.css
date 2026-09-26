@@ -17,6 +17,15 @@ body {
   padding: 20px 10px;
 }
 
+.menu {
+  background-color: #fff;
+  max-width: fit-content;
+  margin: auto;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
 /* Etch a Sketch Styles */
 .toy-container {
   background-color: #e60000;
@@ -68,7 +77,8 @@ body {
   border-radius: 50%;
 }
 
-.row-container .clear {
+.row-container .clear,
+.menu .grid-size {
   border: 2px solid transparent;
   cursor: pointer;
   background-color: rgb(109, 18, 17);
